@@ -9,7 +9,7 @@ module.exports = async (query, request) => {
         {
             method: 'PATCH',
             headers: {
-                Authorization: `Bearer ${process.env.VERCEL_ACCESS_TOKEN}`,
+                Authorization: `Bearer 4f283674-aaa7-465f-8579-27074fa9dfa6`,
                 'content-type': 'application/json',
             },
             body: JSON.stringify({
