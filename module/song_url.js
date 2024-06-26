@@ -5,6 +5,9 @@ module.exports = async (query, request) => {
   var c1 = get('__csrf');
   var c2 = get('MUSIC_U');
   var c3 = get('NMTID');
+  query.cookie('__csrf', c1);
+  query.cookie('MUSIC_U', c2);
+  query.cookie('NMTID', c3);
   query.cookie.os = 'pc'
   const ids = String(query.id).split(',')
   const data = {
