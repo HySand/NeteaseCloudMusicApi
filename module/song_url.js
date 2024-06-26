@@ -2,9 +2,9 @@
 import { get } from '@vercel/edge-config';
 
 module.exports = async (query, request) => {
-  var c1 = get('__csrf');
-  var c2 = get('MUSIC_U');
-  var c3 = get('NMTID');
+  const c1 = await get('__csrf');
+  const c2 = await get('MUSIC_U');
+  const c3 = await get('NMTID');
   query.cookie('__csrf', c1);
   query.cookie('MUSIC_U', c2);
   query.cookie('NMTID', c3);
