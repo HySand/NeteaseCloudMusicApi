@@ -5,11 +5,11 @@ module.exports = async (query, request) => {
     const c3 = await get('NMTID');
     
     const res = await fetch(
-        'https://api.vercel.com/v1/edge-config/ecfg_s5mlaclrjfl2nzclxmkibfpvtntm/items',
+        'https://edge-config.vercel.com/ecfg_s5mlaclrjfl2nzclxmkibfpvtntm',
         {
             method: 'PATCH',
             headers: {
-                Authorization: `Bearer 4f283674-aaa7-465f-8579-27074fa9dfa6`,
+                Authorization: `Bearer ${process.env.VERCEL_ACCESS_TOKEN}`,
                 'content-type': 'application/json',
             },
             body: JSON.stringify({
