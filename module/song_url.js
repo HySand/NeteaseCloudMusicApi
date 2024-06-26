@@ -1,5 +1,10 @@
 // 歌曲链接
+import { get } from '@vercel/edge-config';
+
 module.exports = async (query, request) => {
+  var c1 = get('__csrf');
+  var c2 = get('MUSIC_U');
+  var c3 = get('NMTID');
   query.cookie.os = 'pc'
   const ids = String(query.id).split(',')
   const data = {
