@@ -39,7 +39,6 @@
           alert('授权登录成功')
           await getLoginStatus(statusRes.cookie)
           localStorage.setItem('cookie', statusRes.cookie)
-          storage.setItem('cookie', statusRes.cookie);
         }
       }, 3000)
     }
