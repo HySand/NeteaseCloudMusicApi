@@ -25,7 +25,7 @@ module.exports = async () => {
         {
             method: 'PATCH',
             headers: {
-                Authorization: `Bearer ${process.env.VERCEL_ACCESS_TOKEN}`,
+                Authorization: `Bearer ` + process.env.VERCEL_ACCESS_TOKEN,
                 'Content-Type': 'application/json',
             },
             body,
