@@ -20,7 +20,7 @@ module.exports = async (query, fetch) => {
         ],
     });
     const res = await fetch(
-        'https://api.vercel.com/v1/edge-config/ecfg_s5mlaclrjfl2nzclxmkibfpvtntm/items',
+        'https://api.vercel.com/v1/edge-config/ecfg_s5mlaclrjfl2nzclxmkibfpvtntm/items?teamId=team_9Cg1Z5LRvs1c2wAxsNclmLeU',
         {
             method: 'PATCH',
             headers: {
