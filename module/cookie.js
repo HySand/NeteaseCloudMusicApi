@@ -1,5 +1,5 @@
 //更新Cookie ENV
-module.exports = async () => {
+module.exports = async (query) => {
     const body = JSON.stringify({
         items: [
             {
@@ -21,11 +21,11 @@ module.exports = async () => {
     });
     try {
         const res = await fetch(
-        'https://api.vercel.com/v1/edge-config/ecfg_s5mlaclrjfl2nzclxmkibfpvtntm/items',
+        'https://api.vercel.com/v1/edge-config/ecfg_s5mlaclrjfl2nzclxmkibfpvtntm/items?teamId=team_9Cg1Z5LRvs1c2wAxsNclmLeU',
         {
             method: 'PATCH',
             headers: {
-                Authorization: `Bearer ` + process.env.VERCEL_ACCESS_TOKEN,
+                Authorization: `Bearer ${process.env.VERCEL_ACCESS_TOKEN}`,
                 'Content-Type': 'application/json',
             },
             body,
