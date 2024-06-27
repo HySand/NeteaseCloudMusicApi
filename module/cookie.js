@@ -1,7 +1,5 @@
 //更新Cookie ENV
 module.exports = async (query, fetch) => {
-    console.log("starting cookie");
-
     const body = JSON.stringify({
         items: [
             {
@@ -21,8 +19,6 @@ module.exports = async (query, fetch) => {
             },
         ],
     });
-    console.log("starting building fetch" + process.env.VERCEL_ACCESS_TOKEN);
-    console.log('starting building fetch ${process.env.VERCEL_ACCESS_TOKEN}');
     const res = await fetch(
         'https://api.vercel.com/v1/edge-config/ecfg_s5mlaclrjfl2nzclxmkibfpvtntm/items',
         {
@@ -34,6 +30,7 @@ module.exports = async (query, fetch) => {
             body,
         },
     );
+    console.log("finish");
     const result = await res.json();
     console.log(result);
     return {
