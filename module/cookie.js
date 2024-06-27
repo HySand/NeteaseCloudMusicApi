@@ -1,5 +1,5 @@
 //更新后端Cookie
-module.exports = async (query, request) => {
+module.exports = async (query, fetch) => {
     const res = await fetch(
         'https://api.vercel.com/v1/edge-config/ecfg_s5mlaclrjfl2nzclxmkibfpvtntm/items',
         {
