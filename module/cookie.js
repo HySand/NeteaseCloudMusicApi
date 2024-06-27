@@ -1,5 +1,6 @@
 //更新Cookie ENV
 module.exports = async (query, fetch) => {
+    console.log("starting cookie");
 
     const body = JSON.stringify({
         items: [
