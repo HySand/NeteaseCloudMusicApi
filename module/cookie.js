@@ -1,5 +1,5 @@
 //更新Cookie ENV
-module.exports = async (query, fetch) => {
+module.exports = async () => {
     const body = JSON.stringify({
         items: [
             {
