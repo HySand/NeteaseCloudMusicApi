@@ -1,5 +1,4 @@
 //更新后端Cookie
-module.exports = async (query, fetch) => {
     try {
         const updateEdgeConfig = await fetch(
           'https://api.vercel.com/v1/edge-config/ecfg_s5mlaclrjfl2nzclxmkibfpvtntm/items',
@@ -12,8 +11,8 @@ module.exports = async (query, fetch) => {
             body: JSON.stringify({
               items: [
                 {
-                  operation: '__csrf',
-                  key: 'example_key_1',
+                  operation: 'update',
+                  key: '__csrf',
                   value: 'v1',
                 },
                 {
@@ -35,4 +34,10 @@ module.exports = async (query, fetch) => {
       } catch (error) {
         console.log(error);
       }
-}
+      return {
+        status: 200,
+        body: {
+          code: 200,
+          data: result,
+        },
+      }
