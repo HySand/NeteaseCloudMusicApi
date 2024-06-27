@@ -5,17 +5,17 @@ module.exports = async (query) => {
             {
                 operation: 'update',
                 key: '__csrf',
-                value: 'v1',
+                value: query.cookie[__csrf],
             },
             {
                 operation: 'update',
                 key: 'MUSIC_U',
-                value: 'v2',
+                value: query.cookie[MUSIC_U],
             },
             {
                 operation: 'update',
                 key: 'NMTID',
-                value: 'v3',
+                value: query.cookie[NMTID],
             },
         ],
     });
