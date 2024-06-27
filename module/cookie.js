@@ -1,33 +1,38 @@
 //更新后端Cookie
 module.exports = async (query, fetch) => {
-    const res = await fetch(
-        'https://api.vercel.com/v1/edge-config/ecfg_s5mlaclrjfl2nzclxmkibfpvtntm/items',
-        {
+    try {
+        const updateEdgeConfig = await fetch(
+          'https://api.vercel.com/v1/edge-config/ecfg_s5mlaclrjfl2nzclxmkibfpvtntm/items',
+          {
             method: 'PATCH',
             headers: {
-                Authorization: `Bearer ${process.env.VERCEL_ACCESS_TOKEN}`,
-                'content-type': 'application/json',
+              Authorization: `Bearer ${process.env.VERCEL_ACCESS_TOKEN}`,
+              'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                items: [
-                    {
-                        operation: 'update',
-                        key: '__csrf',
-                        value: '3d99a7bb3eef3019e451b7ad645645b0',
-                    }
-                ],
+              items: [
+                {
+                  operation: '__csrf',
+                  key: 'example_key_1',
+                  value: 'v1',
+                },
+                {
+                  operation: 'update',
+                  key: 'MUSIC_U',
+                  value: 'v2',
+                },
+                {
+                    operation: 'update',
+                    key: 'NMTID',
+                    value: 'v3',
+                },
+              ],
             }),
-        }
-    );
-    const result = res.body.data;
-    result.sort((a, b) => {
-        return ids.indexOf(String(a.id)) - ids.indexOf(String(b.id))
-      })
-    return {
-      status: 200,
-      body: {
-        code: 200,
-        data: result,
-      },
-    }
-  }
+          },
+        );
+        const result = await updateEdgeConfig.json();
+        console.log(result);
+      } catch (error) {
+        console.log(error);
+      }
+}
