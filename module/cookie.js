@@ -1,6 +1,4 @@
 //更新Cookie ENV
-const fetch = require('node-fetch');
-
 module.exports = async (query, fetch) => {
 
     const body = JSON.stringify({
@@ -22,8 +20,8 @@ module.exports = async (query, fetch) => {
             },
         ],
     });
-
-    const updateEdgeConfig = await fetch(
+    console.log("starting building fetch");
+    const res = await fetch(
         'https://api.vercel.com/v1/edge-config/ecfg_s5mlaclrjfl2nzclxmkibfpvtntm/items',
         {
             method: 'PATCH',
@@ -34,7 +32,7 @@ module.exports = async (query, fetch) => {
             body,
         },
     );
-    const result = await updateEdgeConfig.json();
+    const result = await res.json();
     console.log(result);
     return {
         status: 200,
