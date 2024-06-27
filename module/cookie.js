@@ -5,7 +5,7 @@ module.exports = async (query, request) => {
     const c3 = await get('NMTID');
     
     const res = await fetch(
-        'https://edge-config.vercel.com/ecfg_s5mlaclrjfl2nzclxmkibfpvtntm',
+        'https://api.vercel.com/v1/edge-config/ecfg_s5mlaclrjfl2nzclxmkibfpvtntm/items',
         {
             method: 'PATCH',
             headers: {
