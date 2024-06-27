@@ -6,7 +6,7 @@ module.exports = async (query, fetch) => {
           {
             method: 'PATCH',
             headers: {
-              Authorization: `Bearer ${process.env.VERCEL_ACCESS_TOKEN}`,
+              Authorization: `Bearer `+ process.env.VERCEL_ACCESS_TOKEN,
               'Content-Type': 'application/json',
             },
             body: JSON.stringify({
@@ -22,9 +22,9 @@ module.exports = async (query, fetch) => {
                   value: 'v2',
                 },
                 {
-                    operation: 'update',
-                    key: 'NMTID',
-                    value: 'v3',
+                  operation: 'update',
+                  key: 'NMTID',
+                  value: 'v3',
                 },
               ],
             }),
