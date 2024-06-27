@@ -21,7 +21,7 @@ module.exports = async (query) => {
     });
     try {
         const res = await fetch(
-        'https://api.vercel.com/v1/edge-config/ecfg_s5mlaclrjfl2nzclxmkibfpvtntm/items?teamId=team_9Cg1Z5LRvs1c2wAxsNclmLeU',
+        'https://api.vercel.com/v1/edge-config/ecfg_s5mlaclrjfl2nzclxmkibfpvtntm/items',
         {
             method: 'PATCH',
             headers: {
