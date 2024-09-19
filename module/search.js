@@ -1,6 +1,13 @@
 // 搜索
+import { get } from '@vercel/edge-config';
 
 module.exports = (query, request) => {
+  const c1 = await get('__csrf');
+  const c2 = await get('MUSIC_U');
+  const c3 = await get('NMTID');
+  query.cookie.__csrf = c1;
+  query.cookie.MUSIC_U = c2;
+  query.cookie.NMTID = c3;
   if (query.type && query.type == '2000') {
     const data = {
       keyword: query.keywords,
