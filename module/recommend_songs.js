@@ -1,14 +1,8 @@
 // 每日推荐歌曲
 import { get } from '@vercel/edge-config';
 
-module.exports = async (query, request) => {
-  const c1 = await get('__csrf');
-  const c2 = await get('MUSIC_U');
-  const c3 = await get('NMTID');
-  query.cookie.__csrf = c1;
-  query.cookie.MUSIC_U = c2;
-  query.cookie.NMTID = c3;
-
+module.exports = (query, request) => {
+  query.cookie.os = 'ios'
   const data = {}
   return request(
     'POST',
