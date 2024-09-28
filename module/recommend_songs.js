@@ -8,7 +8,7 @@ module.exports = async (query, request) => {
   query.cookie.__csrf = c1;
   query.cookie.MUSIC_U = c2;
   query.cookie.NMTID = c3;
-  query.cookie.os = 'ios'
+
   const data = {}
   return request(
     'POST',
